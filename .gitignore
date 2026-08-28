@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# 도구 캐시
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# phase 실행 출력
+phases/**/step*-output.json
+
+# 학습 모델 pkl (재생성 가능·크기 측정용, 실측 크기는 comparison.csv에 기록).
+# RF 모델은 수십~수백 MB라 git/GitHub 한도를 넘긴다 → 디렉토리는 .gitkeep으로만 추적.
+artifacts/models/*.pkl
+# 예외: 최종 모델은 작아(1.5KB) 재현·리뷰 위해 추적한다.
+!artifacts/models/final_model_*.pkl
+
+# OS
+.DS_Store
